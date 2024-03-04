@@ -1,17 +1,18 @@
 
 const allData = async(seachData ="") =>{
   const loadingSpiner = document.getElementById('loadingSpiner');
-  loadingSpiner.classList.remove('hidden');
-  await new Promise(resolve => setTimeout(resolve, 2000));
-  
+      loadingSpiner.classList.remove('hidden');
+      await new Promise(resolve => setTimeout(resolve, 2000));
     const allPost = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${seachData}`);
     const res = await allPost.json()
     const posts = res.posts;
+    
     const parentDiv = document.getElementById('parentDiv');
     parentDiv.textContent = ' '
+    
     const allPostArr = [];
     const post = posts.forEach(post => {
-      const loading = loadingSpiner.classList.add('hidden');
+      loadingSpiner.classList.add('hidden')
       allPostArr.push(1);
         const postArea = document.createElement('div');
         
@@ -90,7 +91,6 @@ const allData = async(seachData ="") =>{
         if(allPostArr.length === 0){
           hello.classList.remove('hidden')
         }
-        
         console.log(allPostArr);
         
 }
@@ -115,7 +115,8 @@ const addBtn = (title, views) =>{
 
 const latestPost = async() =>{
   const loadingSpiner2 = document.getElementById('loadingSpiner2');
-  loadingSpiner2.classList.remove('hidden')
+      loadingSpiner2.classList.remove('hidden')
+      await new Promise(resolve => setTimeout(resolve, 2000));
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
     const latestPost = await res.json()
     const rightParentDiv = document.getElementById('rightParentDive');
@@ -152,14 +153,14 @@ const latestPost = async() =>{
     })
 }
 
-const searchBtn = () =>{
+const searchBtn = async() =>{
   const loadingSpiner = document.getElementById('loadingSpiner');
-  loadingSpiner.classList.remove('hidden')
+      loadingSpiner.classList.remove('hidden');
   const searchInput = document.getElementById('searchInput');
   const inputValue = searchInput.value;
-  allData(inputValue);
+  await allData(inputValue);
+  loadingSpiner.classList.add('hidden');
 }
-
 
 allData()
 latestPost()
