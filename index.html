@@ -18,10 +18,6 @@
         *{
         font-family: "Inter", sans-serif;
         }
-        .avatar.offline:before{
-          top: -4%;
-          right: -4%;
-        }
     </style>
 </head>
 <body>
@@ -36,7 +32,7 @@
                 <ul tabindex="0" class="menu space-y-2 pl-10 menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                   <li><a data-tip="Home" class="tooltip text-lg w-fit  rounded-full  bg-[#12132D08] border-[2px] border-[#0307121A]"><i class="fa-solid fa-house-user"></i></a></li>
                       <li>
-                        <li><a data-tip="Write" class="tooltip text-lg w-fit rounded-full bg-[#12132D08] border-[2px] border-[#0307121A]"><i class="fa-solid fa-pencil"></i></a></li>
+                        <li><a data-tip="Edit" class="tooltip text-lg w-fit rounded-full bg-[#12132D08] border-[2px] border-[#0307121A]"><i class="fa-solid fa-pencil"></i></a></li>
                       </li>
                       <li><a data-tip="Add" class="tooltip  w-fit rounded-full bg-[#12132D08] border-[2px] border-[#0307121A]"><i class="fa-solid fa-user-plus"></i></a></li>
                       <li><a data-tip="Post" class="tooltip text-lg w-fit rounded-full bg-[#12132D08] border-[2px] border-[#0307121A]"><i class="fa-solid fa-flag"></i></a></li>
@@ -49,7 +45,7 @@
                     <ul class="menu menu-horizontal gap-3">
                       <li><a data-tip="Home" class="tooltip text-lg  rounded-full  bg-[#12132D08] border-[2px] border-[#0307121A]"><i class="fa-solid fa-house-user"></i></a></li>
                       <li>
-                        <li><a data-tip="Write" class="tooltip text-lg rounded-full bg-[#12132D08] border-[2px] border-[#0307121A]"><i class="fa-solid fa-pencil"></i></a></li>
+                        <li><a data-tip="Edit" class="tooltip text-lg rounded-full bg-[#12132D08] border-[2px] border-[#0307121A]"><i class="fa-solid fa-pencil"></i></a></li>
                       </li>
                       <li><a data-tip="Add" class="tooltip text-lg rounded-full bg-[#12132D08] border-[2px] border-[#0307121A]"><i class="fa-solid fa-user-plus"></i></a></li>
                       <li><a data-tip="Post" class="tooltip text-lg rounded-full bg-[#12132D08] border-[2px] border-[#0307121A]"><i class="fa-solid fa-flag"></i></a></li>
@@ -68,8 +64,8 @@
               <h1 class="lg:text-6xl text-4xl font-bold lg:font-black text-white lg:leading-[86px]">Welcome to the <span class="text-blue-400">NexUs</span> Forum</h1>
               <p class="text-gray-300 lg:text-xl  text-lg  font-medium">Share your favorite opinion and win and wp forum coffee mug!</p>
               <div class="join flex justify-center lg:justify-start">
-                <input class="input input-bordered join-item rounded-full" placeholder="Search here anything"/>
-                <button class="btn bg-[#797DFC] join-item rounded-full text-lg font-bold text-white">Search</button>
+                <input id="searchInput" class="input input-bordered join-item rounded-full" placeholder="Search here anything"/>
+                <button id="searchBtn" onclick="searchBtn()" class="btn bg-[#797DFC] join-item rounded-full text-lg font-bold text-white">Search</button>
               </div>
             </div>
             <div class="bg-white lg:w-[400px] lg:h-[288px] p-6 lg:p-12 m-5 lg:text-2xl font-medium lg:space-y-6 space-y-3 rounded-3xl">
@@ -94,72 +90,34 @@
     </header>
     <main class="max-w-[1170px] lg:mx-auto mx-2 mt-[75px]">
       <!-- Let’s Discuss Section -->
-      <div class="text-center mb-12">
+      <div id="lets" class="text-center mb-12">
         <h1 class="text-3xl lg:text-[40px] font-black">Let’s Discuss</h1>
         <p class="lg:text-lg font-normal text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. <br> The integrated testing features allow for a streamlined .</p>
       </div>
 
       <!-- parent div -->
-      <div class="flex gap-5 lg:flex-row flex-col">
-        <!-- left side -->
-        <div class="bg-[#F3F3F5] lg:p-10 p-3 rounded-3xl max-h-[270px]">
+      
+      <div  class="grid gap-5 lg:grid-cols-6 grid-cols-1">
 
-          <div class="flex gap-3 lg:gap-6">
-            <div class="avatar offline lg:w-[72px] w-[42px] h-[42px] lg:h-[72px]">
-              <div class=" rounded-2xl">
-                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
-            </div>
-            <div class="lg:space-y-4 space-y-2">
-              <div class="flex gap-4">
-                <p>#Coding</p>
-                <p>Author : <span>Safia Chowdhury</span></p>
-              </div>
-              <div class="border-b-2 border-dashed pb-4 lg:space-y-3">
-                <h1 class="lg:text-xl font-bold">10 Kids Unaware of Their Halloween Costume</h1>
-              <p class="lg:text-base font-normal text-[#12132D99]">It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
-              </div>
-              <div class="flex justify-between">
-                <div class="flex gap-4 lg:gap-8">
-                  <div class="flex items-center gap-2">
-                    <i class="fa-regular fa-comment-dots lg:text-2xl text-[#12132D99]"></i>
-                    <p class="lg:text-xl text-[#12132D99]">550</p>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <i class="fa-regular fa-eye lg:text-2xl text-[#12132D99]"></i>
-                    <p class="lg:text-xl text-[#12132D99]">1,568</p>
-                  </div>
-                  <div class="flex items-center gap-2">
-                    <i class="fa-regular fa-clock lg:text-2xl text-[#12132D99]"></i>
-                    <p class="lg:text-xl text-[#12132D99]">5 min</p>
-                  </div> 
-                </div>
-                <div>
-                  <button class="bg-green-400 p-2 px-[10px] rounded-full"><a href="" class=""><i class="fa-solid fa-envelope-open-text text-2xl text-white"></i></i></a></button>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- left side -->
+        <div id="parentDiv" class="space-y-5 col-span-4">
+          
         </div>
         <!-- right side -->
-        <div class=" md:w-[470px] p-6 bg-[#12132D0D] rounded-3xl">
+        <div class=" col-span-2 h-fit p-6 bg-[#12132D0D] rounded-3xl">
           <div class="flex justify-between">
             <h1 class="text-xl font-bold">Title</h1>
-            <p class="text-[#12132D99]"><i class="fa-solid fa-check-double text-green-400"></i>  Mark as read (<span>1</span>)</p>
+            <p class="text-[#12132D99]"><i class="fa-solid fa-check-double text-green-400"></i>  Mark as read (<span id="count">0</span>)</p>
           </div>
-          <div class="mt-5 space-y-4">
-            <div class="flex bg-white p-3 rounded-2xl">
-              <h1 class="text-base font-bold">10 Kids Unaware of Their Halloween Costume</h1>
-              <div class="flex items-center gap-2">
-                <i class="fa-regular fa-eye text-xl text-[#12132D99]"></i>
-                <p class="text-lg text-[#12132D99]">1,568</p>
-              </div>
-            </div>
+          <div id="rightParentDiv" class="mt-5 space-y-4">
+            
             
           </div>
         </div>
       </div>
-
+      <div id="loadingSpiner" class="flex lg:ml-[30%] hidden">
+        <span class="loading loading-bars w-[100px]"></span>
+      </div>
       <!-- Join Our Forum Section -->
       <section class="max-w-[1170px] mx-auto mt-24"> 
         <div class="flex lg:flex-row flex-col justify-between gap-10  p-6 lg:items-center  bg-[#12132D] lg:pt-24 lg:pl-24 lg:pr-10 rounded-3xl">
@@ -179,70 +137,12 @@
           <h1 class="text-3xl lg:text-[40px] font-black">Latest Posts</h1>
           <p class="lg:text-lg font-normal text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. <br> The integrated testing features allow for a streamlined .</p>
         </div>
-          <div class="flex gap-3 lg:flex-row flex-col">
-              <div class="card bg-base-100 shadow-xl">
-                <figure class="px-6 pt-6">
-                  <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
-                </figure>
-                <div class="card-body space-y-3">
-                  <p class="flex gap-3 items-center lg:text-xl font-normal"><i class="fa-regular fa-calendar-days "></i><span class="text-[#12132D99]">29 January 2024</span></p>
-                  <h2 class="card-title">What will a mars habitat force that impact in our daily life!!!</h2>
-                  <p class="text-base font-normal text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. </p>
-                  <div class="card-actions flex gap-5">
-                    <div class="avatar placeholder">
-                      <div class="bg-neutral text-neutral-content rounded-full w-12">
-                        <span class="text-xl">AI</span>
-                      </div>
-                  </div>
-                  <div>
-                    <h2 class="text-base font-bold">Cameron Williamson</h2>
-                    <p class="text-[#12132D99] text-sm font-normal">Unknown</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-              <div class="card bg-base-100 shadow-xl">
-                <figure class="px-6 pt-6">
-                  <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
-                </figure>
-                <div class="card-body space-y-3">
-                  <p class="flex gap-3 items-center text-xl font-normal"><i class="fa-regular fa-calendar-days "></i><span class="text-[#12132D99]">29 January 2024</span></p>
-                  <h2 class="card-title">What will a mars habitat force that impact in our daily life!!!</h2>
-                  <p class="text-base font-normal text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. </p>
-                  <div class="card-actions flex gap-5">
-                    <div class="avatar placeholder">
-                      <div class="bg-neutral text-neutral-content rounded-full w-12">
-                        <span class="text-xl">AI</span>
-                      </div>
-                  </div>
-                  <div>
-                    <h2 class="text-base font-bold">Cameron Williamson</h2>
-                    <p class="text-[#12132D99] text-sm font-normal">Unknown</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card bg-base-100 shadow-xl">
-              <figure class="px-6 pt-6">
-                <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
-              </figure>
-              <div class="card-body space-y-3">
-                <p class="flex gap-3 items-center text-xl font-normal"><i class="fa-regular fa-calendar-days "></i><span class="text-[#12132D99]">29 January 2024</span></p>
-                <h2 class="card-title">What will a mars habitat force that impact in our daily life!!!</h2>
-                <p class="text-base font-normal text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. </p>
-                <div class="card-actions flex gap-5">
-                  <div class="avatar placeholder">
-                    <div class="bg-neutral text-neutral-content rounded-full w-12">
-                      <span class="text-xl">AI</span>
-                    </div>
-                </div>
-                <div>
-                  <h2 class="text-base font-bold">Cameron Williamson</h2>
-                  <p class="text-[#12132D99] text-sm font-normal">Unknown</p>
-                </div>
-              </div>
-            </div>
+          <div id="rightParentDive" class="flex gap-3 lg:flex-row flex-col">
+            
           </div>
+          <div id="loadingSpiner2" class="flex lg:ml-[45%] hidden">
+            <span class="loading loading-bars w-[100px]"></span>
+            </div>
           </div>
       </section>
     </main>
