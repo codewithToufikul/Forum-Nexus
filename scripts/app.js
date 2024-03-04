@@ -1,4 +1,3 @@
-
 const allData = async(seachData ="") =>{
   const loadingSpiner = document.getElementById('loadingSpiner');
       loadingSpiner.classList.remove('hidden');
@@ -71,7 +70,7 @@ const allData = async(seachData ="") =>{
         const activeStatus = postArea.querySelectorAll(".activeStatus");
         activeStatus.forEach(activeStatus =>{
           if(post.isActive === true){
-            activeStatus.classList.add("bg-green-500")
+            activeStatus.classList.add("bg-green-600")
           }
           else if(post.isActive === false){
             activeStatus.classList.add("bg-red-500")
